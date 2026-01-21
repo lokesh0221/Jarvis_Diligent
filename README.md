@@ -1,45 +1,52 @@
-# Jarvis Assistant (Streamlit + Pinecone)
+# Build Your Own Jarvis
 
-A self-hosted personal assistant that retrieves enterprise knowledge from Pinecone and answers questions with a local LLM. The UI is a Streamlit chatbot, and the backend uses embeddings + retrieval to ground answers.
+## Exercise
+Programming Assignment: Build Your Own Personal AI Assistant
+Tool: Virtual Studio, Co-pilot
+Objective: Design an AI-powered feature for a SaaS product — your own Jarvis for the enterprise.
 
-## Features
-- Streamlit chatbot UI
-- Pinecone-based document search
-- Local LLM responses (Ollama-compatible)
-- Optional chat memory stored in Pinecone
-- Simple ingestion pipeline
+## Your Task (Solution Summary)
+This project delivers a personal assistant powered by a self-hosted LLM (Ollama-compatible LLaMA) that:
+- Understands user queries
+- Retrieves relevant context from Pinecone (vector database)
+- Uses chat history as memory
+- Responds through a Streamlit chatbot UI
+
+## What This Project Provides
+- Streamlit chatbot interface
+- Pinecone-backed knowledge retrieval
+- Local LLM responses (self-hosted)
+- Chat memory stored and reused from Pinecone
+- Simple ingestion pipeline for .txt and .md documents
 
 ## Project Workflow
 ![Project Workflow](./assets/image.png)
 
 ## Requirements
 - Python 3.10+
-- A running local LLM server (Ollama recommended)
+- Local LLM server (Ollama recommended)
 - Pinecone API key and index
 
 ## Install & Run (GitHub)
-Clone the repository, set up a virtual environment, install dependencies, configure environment variables, ingest data, then run the app.
-
-### 1) Clone the repo
+1) Clone the repo
 ```bash
 git clone https://github.com/lokesh0221/Jarvis_Diligent.git
 cd Jarvis_Diligent
 ```
 
-### 2) Create and activate a virtual environment
+2) Create and activate a virtual environment
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 3) Install dependencies
+3) Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4) Configure environment variables
-Copy [\.env.example](.env.example) to .env and fill in your keys and settings:
-
+4) Configure environment variables
+Copy [\.env.example](.env.example) to .env and set values:
 ```bash
 copy .env.example .env
 ```
@@ -54,23 +61,16 @@ Key variables:
 - OLLAMA_HOST
 - LLM_MODEL
 
-### 5) Ingest documents
-Place .txt or .md files under [data](data) or another folder and run:
-
+5) Ingest documents
 ```bash
 python scripts/ingest.py --path data
 ```
 
-### 6) Run the Streamlit app
+6) Run the Streamlit app
 ```bash
 streamlit run app/streamlit_app.py
 ```
 
 ## Usage Notes
-- The Streamlit sidebar lets you adjust LLM model, namespace, and retrieval size.
-- If the Pinecone index does not exist, it will be created using PINECONE_CLOUD and PINECONE_REGION.
-- Chat memory is stored in CHAT_NAMESPACE and used for responses.
-
-## Troubleshooting
-- If ingestion fails, verify Pinecone credentials and index settings in .env.
-- If the app cannot respond, verify your local LLM server is running and the model name matches LLM_MODEL.
+- Adjust model and retrieval settings in the Streamlit sidebar.
+- Chat memory is stored in CHAT_NAMESPACE and reused in responses.
