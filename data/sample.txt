@@ -1,0 +1,4 @@
+Welcome to the Jarvis Assistant demo knowledge base.
+
+This system stores enterprise documentation in a vector database and retrieves relevant context at query time.
+It supports a self-hosted LLM for privacy and low latency.
