@@ -21,7 +21,19 @@ This project delivers a personal assistant powered by a self-hosted LLM (Ollama-
 - Simple ingestion pipeline for .txt and .md documents
 
 ## Project Workflow
-![Project Workflow](./assets/image.png)
+```mermaid
+flowchart TD
+	A[Add knowledge files] --> B[Ingest knowledge]
+	B --> C[Ask question (text or voice)]
+	C --> D[Embed question]
+	D --> E[Retrieve docs from Pinecone]
+	D --> F[Retrieve chat memory from Pinecone]
+	E --> G[Compose context]
+	F --> G
+	G --> H[Generate answer with local LLM]
+	H --> I[Show answer + sources]
+	H --> J[Store chat in Pinecone]
+```
 
 ## Requirements
 - Python 3.10+
