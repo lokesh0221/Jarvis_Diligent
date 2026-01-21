@@ -14,6 +14,7 @@ class Settings:
     pinecone_cloud: str = os.getenv("PINECONE_CLOUD", "")
     pinecone_region: str = os.getenv("PINECONE_REGION", "")
     pinecone_namespace: str = os.getenv("PINECONE_NAMESPACE", "default")
+    chat_namespace: str = os.getenv("CHAT_NAMESPACE", "chat-history")
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
     ollama_host: str = os.getenv("OLLAMA_HOST", "http://localhost:11434")
     llm_model: str = os.getenv("LLM_MODEL", "llama3.1")

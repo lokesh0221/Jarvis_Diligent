@@ -41,6 +41,7 @@ for message in st.session_state.messages:
 
 if prompt := st.chat_input("Ask a question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
+    service.store_message("user", prompt)
     with st.chat_message("user"):
         st.markdown(prompt)
 
@@ -65,3 +66,4 @@ if prompt := st.chat_input("Ask a question"):
                         st.markdown(text)
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
+    service.store_message("assistant", answer)

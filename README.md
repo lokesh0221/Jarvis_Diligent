@@ -3,16 +3,14 @@
 A self-hosted personal assistant that retrieves enterprise knowledge from Pinecone and answers questions with a local LLM. The UI is a Streamlit chatbot, and the backend uses embeddings + retrieval to ground answers.
 
 ## Features
-- Streamlit chatbot UI with conversation history
-- Pinecone vector database for knowledge storage and retrieval
-- Self-hosted LLM integration (Ollama-compatible endpoint)
-- Simple ingestion pipeline for .txt and .md files
+- Streamlit chatbot UI
+- Pinecone-based document search
+- Local LLM responses (Ollama-compatible)
+- Optional chat memory stored in Pinecone
+- Simple ingestion pipeline
 
-## Architecture (High-Level)
-1. Ingest documents from [data](data) with [scripts/ingest.py](scripts/ingest.py)
-2. Embed text with SentenceTransformers and store vectors in Pinecone
-3. At query time, retrieve top-k relevant chunks from Pinecone
-4. Pass context + question to the local LLM and render the response in Streamlit
+## Project Workflow
+See [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md) for the end-to-end flow.
 
 ## Requirements
 - Python 3.10+
@@ -52,6 +50,7 @@ Key variables:
 - PINECONE_CLOUD
 - PINECONE_REGION
 - PINECONE_NAMESPACE
+- CHAT_NAMESPACE
 - OLLAMA_HOST
 - LLM_MODEL
 
@@ -70,6 +69,7 @@ streamlit run app/streamlit_app.py
 ## Usage Notes
 - The Streamlit sidebar lets you adjust LLM model, namespace, and retrieval size.
 - If the Pinecone index does not exist, it will be created using PINECONE_CLOUD and PINECONE_REGION.
+- Chat memory is stored in CHAT_NAMESPACE and used for responses.
 
 ## Troubleshooting
 - If ingestion fails, verify Pinecone credentials and index settings in .env.
