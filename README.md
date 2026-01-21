@@ -10,7 +10,7 @@ A self-hosted personal assistant that retrieves enterprise knowledge from Pineco
 - Simple ingestion pipeline
 
 ## Project Workflow
-See [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md) for the end-to-end flow.
+![Project Workflow](./assets/image.png)
 
 ## Requirements
 - Python 3.10+
