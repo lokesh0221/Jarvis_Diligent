@@ -17,6 +17,7 @@ This project delivers a personal assistant powered by a self-hosted LLM (Ollama-
 - Pinecone-backed knowledge retrieval
 - Local LLM responses (self-hosted)
 - Chat memory stored and reused from Pinecone
+- Voice input (speech-to-text) and voice output (text-to-speech)
 - Simple ingestion pipeline for .txt and .md documents
 
 ## Project Workflow
@@ -26,6 +27,7 @@ This project delivers a personal assistant powered by a self-hosted LLM (Ollama-
 - Python 3.10+
 - Local LLM server (Ollama recommended)
 - Pinecone API key and index
+- FFmpeg installed (required by Whisper for voice input)
 
 ## Install & Run (GitHub)
 1) Clone the repo
@@ -74,3 +76,4 @@ streamlit run app/streamlit_app.py
 ## Usage Notes
 - Adjust model and retrieval settings in the Streamlit sidebar.
 - Chat memory is stored in CHAT_NAMESPACE and reused in responses.
+- Enable voice input/output from the sidebar to use speech features.
