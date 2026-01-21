@@ -24,8 +24,8 @@ Clone the repository, set up a virtual environment, install dependencies, config
 
 ### 1) Clone the repo
 ```bash
-git clone <your-repo-url>
-cd diligent
+git clone https://github.com/lokesh0221/Jarvis_Diligent.git
+cd Jarvis_Diligent
 ```
 
 ### 2) Create and activate a virtual environment
