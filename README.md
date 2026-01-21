@@ -24,7 +24,7 @@ This project delivers a personal assistant powered by a self-hosted LLM (Ollama-
 ```mermaid
 flowchart TD
 	A[Add knowledge files] --> B[Ingest knowledge]
-	B --> C[Ask question (text or voice)]
+	B --> C[Ask question]
 	C --> D[Embed question]
 	D --> E[Retrieve docs from Pinecone]
 	D --> F[Retrieve chat memory from Pinecone]
